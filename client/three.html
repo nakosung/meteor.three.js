@@ -1,0 +1,35 @@
+<head>
+  <title>three</title>
+    <script type="text/javascript" src="three.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="span3">
+            {{> console}}
+        </div>
+        <div class="span8">
+            {{#constant}}
+            {{> three}}
+            {{/constant}}
+        </div>
+    </div>
+</body>
+
+<template name="three">
+    <div class="renderTarget" style="width:400px;height:400px">
+    </div>
+</template>
+
+<template name="console">
+    <h4>boxes</h4>
+    <button class="btn btn-primary create">create</button>
+    <ul>
+        {{#each boxes}}
+        <li>
+            <button class="btn inc">+x</button><button class="btn dec">-x</button>
+            <a href="#" class="delete">&times;</a>{{x}}
+        </li>
+        {{/each}}
+    </ul>
+</template>
